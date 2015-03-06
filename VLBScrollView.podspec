@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 	s.resources = 'VLBScrollView/**/*.xib'
 	s.prefix_header_file = 'VLBScrollView/VLBScrollView-Prefix.pch'
   s.frameworks = 'Foundation', 'UIKit', 'CoreGraphics' 
-	s.dependency 'CocoaLumberjack', '1.6.2'
+	s.dependency 'CocoaLumberjack'
 	s.dependency 'VLBFoundation'
   s.requires_arc = true
 
