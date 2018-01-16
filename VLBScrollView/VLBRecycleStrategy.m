@@ -53,7 +53,7 @@
 	{
 		if(!CGRectIntersectsRect(visibleView.frame, bounds))
 		{
-			DDLogVerbose(@"recycle view %@", visibleView);
+			//DDLogVerbose(@"recycle view %@", visibleView);
 			[recycledViews addObject:visibleView];
 			[visibleView removeFromSuperview];			
 		}
@@ -68,7 +68,7 @@
         [self.recycledViews removeObject:view];
     }
 
-	DDLogVerbose(@"dequeueReusableView %@", view);
+	//DDLogVerbose(@"dequeueReusableView %@", view);
 	
 return copy;
 }

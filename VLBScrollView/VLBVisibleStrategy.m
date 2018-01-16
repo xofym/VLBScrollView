@@ -114,7 +114,7 @@ return self;
 {
 	BOOL isVisible = (minimumVisibleIndex <= index) && (index <= maximumVisibleIndex);
 	
-	DDLogVerbose(@"%d visible? {%d <= %d <= %d} %@", index, minimumVisibleIndex, index, maximumVisibleIndex, (isVisible ? @"YES" : @"NO"));
+	//DDLogVerbose(@"%d visible? {%d <= %d <= %d} %@", index, minimumVisibleIndex, index, maximumVisibleIndex, (isVisible ? @"YES" : @"NO"));
 
 return isVisible;
 }
@@ -135,7 +135,7 @@ return isVisible;
     minimumVisible = self.minimumVisibleIndexPrecondition(self.minimumVisibleIndex, minimumVisible);
 	maximumVisible = self.maximumVisibleIndexPrecondition(self.maximumVisibleIndex, maximumVisible);
 
-	DDLogVerbose(@"%d >= willAppear < %d of dimension %@ on bounds %@", minimumVisible, maximumVisible, self.dimension, NSStringFromCGRect(bounds));
+	//DDLogVerbose(@"%d >= willAppear < %d of dimension %@ on bounds %@", minimumVisible, maximumVisible, self.dimension, NSStringFromCGRect(bounds));
     
 	for (int index = minimumVisible; index < maximumVisible; index++) 
 	{
@@ -143,7 +143,7 @@ return isVisible;
 		{
             [self.delegate viewsShouldBeVisibleBetween:minimumVisible to:maximumVisible];
             
-			DDLogVerbose(@"%d should be visible", index);
+			//DDLogVerbose(@"%d should be visible", index);
 			UIView *view = [self.delegate shouldBeVisible:index];
 			[self.visibleViews addObject:view];
 		}
@@ -152,7 +152,7 @@ return isVisible;
     self.minimumVisibleIndex = minimumVisible;
 	self.maximumVisibleIndex = maximumVisible - 1;
 	
-	DDLogVerbose(@"minimum visible: %d, maximum visible: %d", self.minimumVisibleIndex, self.maximumVisibleIndex);
+	//DDLogVerbose(@"minimum visible: %d, maximum visible: %d", self.minimumVisibleIndex, self.maximumVisibleIndex);
 }
 
 @end

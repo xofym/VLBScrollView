@@ -29,7 +29,7 @@
 #import "VLBVisibleStrategy.h"
 #import "VLBSize.h"
 #import <QuartzCore/QuartzCore.h>
-#import "DDLog.h"
+//#import "DDLog.h"
 #import "VLBMacros.h"
 
 @interface VLBScrollView ()
@@ -185,12 +185,12 @@ return self;
 	[self.visibleStrategy maximumVisibleIndexShould:floorVisibleIndexAt(numberOfViews)];
     self.contentSize = [self.size sizeOf:numberOfViews size:self.dimension.value];
 	
-    DDLogVerbose(@"%s", __PRETTY_FUNCTION__);
+    /*DDLogVerbose(@"%s", __PRETTY_FUNCTION__);
 	DDLogVerbose(@"frame %@", NSStringFromCGRect(self.frame));
-	DDLogVerbose(@"contentSize %@", NSStringFromCGSize(self.contentSize));
+	DDLogVerbose(@"contentSize %@", NSStringFromCGSize(self.contentSize));*/
     
     CGRect bounds = [self bounds];
-    DDLogVerbose(@"layoutSubviews on bounds %@", NSStringFromCGRect(bounds));
+    //DDLogVerbose(@"layoutSubviews on bounds %@", NSStringFromCGRect(bounds));
     
 	[self recycleVisibleViewsWithinBounds:bounds];
 	[self removeRecycledFromVisibleViews];
@@ -279,17 +279,17 @@ return self;
 	 */
 	[self.contentView addSubview:view];
     
-    DDLogVerbose(@"added %@ as subview to %@", view, self);
+    //DDLogVerbose(@"added %@ as subview to %@", view, self);
     return view;
 }
 
 -(void)didTapOnScrollView:(id)sender
 {
-    DDLogVerbose(@"%s", __PRETTY_FUNCTION__);
+    //DDLogVerbose(@"%s", __PRETTY_FUNCTION__);
     UITapGestureRecognizer *tapGestureRecognizer = (UITapGestureRecognizer*)sender;
     CGPoint locationInView = [tapGestureRecognizer locationInView:self];
     NSUInteger index = [self indexOf:locationInView];
-    DDLogVerbose(@"%u", index);
+    //DDLogVerbose(@"%u", index);
     
     NSUInteger numberOfViews = [self.datasource numberOfViewsInScrollView:self];
     
